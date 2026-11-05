@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-assistant"
+version = "1.0.0"
+description = "Command-line personal assistant: contacts with birthdays and notes with tags"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["colorama>=0.4.6", "prompt_toolkit>=3.0"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+assistant = "personal_assistant.cli:main"
+
+[tool.setuptools]
+packages = ["personal_assistant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
